@@ -1,8 +1,8 @@
 .DS_Store
-dist/assets/reference.png
 .openai/
 .sites-runtime/
 node_modules/
 .env
 .env.*
 !.env.example
+dist/assets/reference.png

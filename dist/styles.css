@@ -10,7 +10,7 @@ a{color:inherit;text-decoration:none}
 button:focus-visible,a:focus-visible{outline:3px solid var(--orange);outline-offset:5px}
 .hero{position:relative;isolation:isolate;width:100%;max-width:1800px;min-height:100svh;aspect-ratio:1672/941;margin:auto;overflow:hidden;background:radial-gradient(ellipse at 47% 44%,#f6f7f8 0,rgba(249,249,250,.3) 36%,#fff 72%)}
 .hero-art{position:absolute;z-index:-1;left:32.9%;top:8.5%;width:29.3%;height:80%;overflow:hidden;pointer-events:none;mask-image:linear-gradient(to right,transparent 0,#000 9%,#000 87%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 7%,#000 85%,transparent 100%);mask-composite:intersect}
-.hero-art img{position:absolute;width:341.3%;max-width:none;left:-112.3%;top:-10.625%;height:auto}
+.hero-art img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;}
 .intro{position:absolute;left:4.2%;top:22.1%;width:37%}
 h1{margin:0;font-size:clamp(32px,3.18vw,57px);font-weight:900;line-height:1.37;letter-spacing:-.065em}
 h1 span{display:block;white-space:nowrap}
@@ -20,7 +20,7 @@ h1 span{display:block;white-space:nowrap}
 .enroll:hover{transform:translateY(-3px);box-shadow:0 19px 28px #0003}
 .enroll:active{transform:translateY(0)}
 .testimonial{position:absolute;left:4.2%;top:71.4%;display:flex;align-items:center;gap:12px}
-.avatars{width:100px;height:44px;background:url('assets/reference.png') -70px -670px / 1672px 941px no-repeat;flex-shrink:0}
+.avatars{display:block;width:100px;height:44px;object-fit:contain;flex-shrink:0}
 .rating{display:flex;gap:8px;align-items:center;font-family:Arial,var(--font);font-size:18px;color:#202430}
 .stars{color:var(--orange);font-size:25px;letter-spacing:0;line-height:1}
 .review p{font-size:17px;letter-spacing:-.045em;margin:3px 0 0;line-height:1.4}
@@ -56,7 +56,7 @@ dialog p{font-size:16px;line-height:1.8;color:#62626a}
  .enroll{min-height:48px;font-size:16px;padding-left:23px;gap:25px}
  .button-arrow{width:46px;height:46px}
  .hero-art{position:relative;inset:auto;z-index:0;width:calc(100% + 25px);height:auto;aspect-ratio:490/710;margin:-8px -12px -50px;align-self:center;order:2;mask-image:linear-gradient(to right,transparent,#000 8%,#000 88%,transparent),linear-gradient(to bottom,transparent,#000 9%,#000 77%,transparent);mask-composite:intersect}
- .hero-art img{width:341.3%;left:-112.3%;top:-11.3%}
+ .hero-art img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;}
  .testimonial{position:relative;inset:auto;order:4;margin:28px 0 30px;align-self:center;gap:11px}
  .rating{font-size:15px}.stars{font-size:22px}.review p{font-size:15px}.avatars{transform:scale(.9);width:100px;margin-right:-10px}
  .brand{position:relative;inset:auto;width:100%;display:flex;flex-direction:row-reverse;align-items:center;justify-content:space-between;gap:16px;z-index:1;order:3}
@@ -71,9 +71,8 @@ dialog p{font-size:16px;line-height:1.8;color:#62626a}
 @media(max-width:360px){.hero{padding-inline:20px}.stat{padding:11px 9px}.stat-change{font-size:12px}.brand{gap:10px}.tools a{font-size:12px;gap:4px;padding-inline:3px}.tool-icon{width:20px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
 
-/* 첨부 이미지 속 로고를 CSS로 잘라 표시합니다. */
-.tool-icon{background-image:url('assets/reference.png');background-repeat:no-repeat;background-size:1672px 941px;width:30px;height:32px;color:transparent!important;font-size:0!important}
-.chatgpt{background-position:-317px -858px}.claude{background-position:-467px -858px}.grok{background-position:-653px -858px}.cursor{background-position:-802px -858px}.gemini{background-position:-958px -858px}.deepseek{background-position:-1104px -858px}
+/* 로고는 별도 SVG 파일이며 참고 스크린샷을 사용하지 않습니다. */
+.tool-icon{display:block;width:28px;height:28px;object-fit:contain}
 @media(min-width:761px) and (max-width:1100px){
  .hero{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:48px}
  .intro{grid-column:1;grid-row:1;align-self:center}
